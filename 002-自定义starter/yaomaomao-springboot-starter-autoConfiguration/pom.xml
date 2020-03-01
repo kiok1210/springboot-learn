@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.yao.springboot</groupId>
-    <artifactId>yaomaomao-springboot-starter-autoconfigurer</artifactId>
+    <groupId>com.yao.springboot-starter</groupId>
+    <artifactId>yaomaomao-springboot-starter-autoConfiguration</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <!-- 指定springboot 依赖版本号-->

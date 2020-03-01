@@ -1,15 +1,14 @@
 package com.yao;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration // 配置类
+@EnableConfigurationProperties(YaomaomaoProperties.class) // 指定自动装载类
+@Configuration // 声明是配置类
 @ConditionalOnWebApplication // web应用
-@EnableConfigurationProperties(YaomaomaoProperties.class)
 public class YaomaomaoAutoConfiguration {
 
     @Autowired
@@ -21,5 +20,4 @@ public class YaomaomaoAutoConfiguration {
         yaomaomaoService.setYaomaomaoProperties(yaomaomaoProperties);
         return yaomaomaoService;
     }
-
 }
