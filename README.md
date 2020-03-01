@@ -1,5 +1,8 @@
 # springboot-learn
-springboot-源码学习
+springboot-源码学习，内附源码。
+
+如果对你有帮助，请点个star。
+
 目前更新章节：
 
 [001 springboot是怎么做到简化配置的？](https://github.com/kiok1210/springboot-learn/tree/master/001-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE)
