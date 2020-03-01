@@ -354,4 +354,26 @@ url=jdbc:oracle:thin:@192.168.1.8:1521:orcl,
 
 一个完整的starter一般包含一个autoconfigure模块（自动配置），一个starter模块（提供对autoconfigure模块及其它的依赖）。
 
+再回忆下自定义starter的创建过程：
+
+1、创建一个autoConfiguration模块，pom引入org.spring.boot。
+
+2、在autoConfiguration模块下创建properties配置类，使用@ConfigurationProperties声明，使用prefix指定前缀，定义尽可能使用到的字段属性。
+
+3、创建properties对应的service类，操作properties中的属性进行业务操作。
+
+4、创建autoConfiguration类，使用@EnableAutoConfiguration注解进行自动装配，将service类注入到spring容器中。
+
+5、创建META-INF/spring.factories，指定 org.springframework.boot.autoconfigure.EnableAutoConfiguration 的value是 我们开启自动装配注解(@EnableAutoConfiguration)的类。
+
+6、创建一个starter模块，pom引入刚刚创建的autoConfiguration。
+
+7、maven install 上面两个module。
+
+8、新建一个module或project，引用starter的maven包。
+
+9、写一个测试类，在application.properties文件中指定prefix前缀的配置变量，调用service中预先写好的方法，看看是否起作用。
+
+一句话总结下自定义starter的核心点，就是利用@EnableAutoConfiguration这个注解进行自动映射。
+
 本次练习的代码已在我的github上传，地址为：https://github.com/kiok1210/springboot-learn。
